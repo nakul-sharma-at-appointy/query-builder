@@ -415,19 +415,18 @@ const QueryBuilder = React.memo(
 
         // Generate the context only once, or when the properties change.
         React.useEffect(() => {
-            const { customOperators, filters, maxLevels, operators } = props;
+            const { customOperators, filters, operators } = props;
             setContext({
                 customOperators,
                 dispatch,
                 filters: props.sortFilters ? sortFilterGroupsByLabel(filters) : filters,
                 filtersByValue: generateFiltersByValue(filters),
                 flattenedFilters: generateFlattenedFilters(filters),
-                maxLevels,
                 operators,
                 operatorsByValue: generateOperatorsByValue(operators, customOperators),
                 operatorsByType: generateOperatorsByType(operators, customOperators),
             });
-        }, [dispatch, props, props.filters, props.maxLevels, props.operators]);
+        }, [dispatch, props, props.filters, props.operators]);
 
         // Reset the query if it was changed externally.
         React.useEffect(() => {
@@ -472,7 +471,6 @@ QueryBuilder.defaultProps = {
     customOperators: {},
     debug: false,
     filters: [],
-    maxLevels: 1,
     operators: [...operators],
     onChange: null,
     query: emptyGroup(),
@@ -483,7 +481,6 @@ QueryBuilder.propTypes = {
     customOperators: PropTypes.object,
     debug: PropTypes.bool,
     filters: PropTypes.array,
-    maxLevels: PropTypes.number,
     operators: PropTypes.array,
     onChange: PropTypes.func,
     query: PropTypes.object,

@@ -160,7 +160,6 @@ storiesOf("MuiQueryBuilder")
                 filters={[
                    
                 ]}
-                maxLevels={3}
                 query={{
                     combinator: "or",
                     rules: [
@@ -213,7 +212,6 @@ storiesOf("MuiQueryBuilder")
                         ],
                     },
                 ]}
-                maxLevels={3}
                 query={{
                     combinator: "or",
                     rules: [
@@ -433,7 +431,6 @@ storiesOf("MuiQueryBuilder")
                             ],
                         },
                     ]}
-                    maxLevels={0}
                     query={{
                         combinator: "or",
                         rules: [

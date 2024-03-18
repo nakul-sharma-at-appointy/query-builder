@@ -116,10 +116,9 @@ const RuleGroup = (props) => {
     const { combinator, combinators, id, level, rules } = props;
     const testId = `group-${level}`;
 
-    const { dispatch, maxLevels } = context;
+    const { dispatch } = context;
 
-    return level <= maxLevels ? (
-        <Grid container className={classes.group} data-testid={testId} direction="column" spacing={1}>
+    return <Grid container className={classes.group} data-testid={testId} direction="column" spacing={1}>
             <Grid item>
                 <Grid container spacing={2}>
                     <Grid item>
@@ -171,7 +170,7 @@ const RuleGroup = (props) => {
                             Rule
                         </Button>
                     </Grid>
-                    {level < maxLevels && (
+                    
                         <Grid item>
                             <Button
                                 className={classes.actionButton}
@@ -185,7 +184,6 @@ const RuleGroup = (props) => {
                                 Group
                             </Button>
                         </Grid>
-                    )}
                 </Grid>
             </Grid>
             {rules?.length > 0 && (
@@ -204,9 +202,6 @@ const RuleGroup = (props) => {
                 </Grid>
             )}
         </Grid>
-    ) : (
-        <span />
-    );
 };
 
 RuleGroup.defaultProps = {
