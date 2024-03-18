@@ -23,8 +23,8 @@ const Type = React.memo(
         console.log("TYPEEEE: ", type);
         const [inputValue, setInputValue] = useState("");
         const typeOptions = [
-            { label: "text", value: "text" },
-            { label: "integer", value: "integer" },
+            { label: "String", value: "String" },
+            { label: "Number", value: "Number" },
         ];
         // console.log(filter.type);
         return (
@@ -38,7 +38,7 @@ const Type = React.memo(
                     return option.value === value.value;
                 }}
                 options={typeOptions}
-                renderInput={(params) => <TextField {...params} placeholder="Field" size="small" variant="outlined" />}
+                renderInput={(params) => <TextField {...params} placeholder="Type" size="small" variant="outlined" />}
                 style={{ minWidth: 250 }}
                 value={myType}
                 inputValue={inputValue}

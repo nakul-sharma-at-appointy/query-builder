@@ -165,7 +165,7 @@ storiesOf("MuiQueryBuilder")
                     rules: [
                         {
                             field: "name",
-                            type: "text",
+                            type: "String",
                             operator: "null",
                             value: null
                         },
@@ -174,7 +174,7 @@ storiesOf("MuiQueryBuilder")
                             rules: [
                                 {
                                     field: "shashanj",
-                                    type: "text",
+                                    type: "Number",
                                     operator: "not_null",
                                     value: null
                                 },
@@ -183,7 +183,7 @@ storiesOf("MuiQueryBuilder")
                                     rules: [
                                         {
                                             field: "Apple",
-                                            type: "text",
+                                            type: "String",
                                             operator: "equal",
                                             value: "46"
                                         }

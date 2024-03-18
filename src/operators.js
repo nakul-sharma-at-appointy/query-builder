@@ -2,62 +2,62 @@ export const operators = [
     {
         label: "equal to",
         value: "equal",
-        types: ["integer", "text"],
+        types: ["Number", "String"],
     },
     {
         label: "not equal to",
         value: "not_equal",
-        types: ["integer", "text"],
+        types: ["Number", "String"],
     },
     {
         label: "contains",
         value: "contains",
-        types: ["text"],
+        types: ["String"],
     },
     {
         label: "does not contain",
         value: "not_contains",
-        types: ["text"],
+        types: ["String"],
     },
     {
         label: "less than",
         value: "less",
-        types: ["number", "integer"],
+        types: ["Number"],
     },
     {
         label: "greater than",
         value: "greater",
-        types: ["number", "integer"],
+        types: ["Number"],
     },
     {
         label: "less or equal to",
         value: "less_equal",
-        types: ["number", "integer"],
+        types: ["Number"],
     },
     {
         label: "greater or equal to",
         value: "greater_equal",
-        types: ["number", "integer"],
+        types: ["Number"],
     },
-    {
-        label: "in",
-        value: "in",
-        types: ["multiselect"],
-    },
-    {
-        label: "not in",
-        value: "not_in",
-        types: ["multiselect"],
-    },
+    // {
+    //     label: "in",
+    //     value: "in",
+    //     types: ["multiselect"],
+    // },
+    // {
+    //     label: "not in",
+    //     value: "not_in",
+    //     types: ["multiselect"],
+    // },
     {
         label: "is null",
         value: "null",
-        types: ["date", "integer", "number", "multiselect", "radio", "select", "switch", "text"],
+        types: ["Number", "String"],
     },
     {
         label: "is not null",
         value: "not_null",
-        types: ["date", "integer", "number", "multiselect", "radio", "select", "switch", "text"],
+        types: ["Number", "String"],
     },
 ];
 

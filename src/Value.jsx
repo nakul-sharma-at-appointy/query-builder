@@ -21,7 +21,7 @@ const readNumericValue = (value) => {
     return value !== null && value !== undefined ? value : "";
 };
 
-const supportedTypes = new Set(["date", "integer", "multiselect", "number", "radio", "select", "switch", "text"]);
+const supportedTypes = new Set(["Number", "String"]);
 
 const Value = React.memo(
     (props) => {
@@ -62,11 +62,14 @@ const Value = React.memo(
                         }}
                     />
                 );
-            case "integer":
+            case "number":
                 return (
                     <TextField
                         data-testid={testId}
                         type="number"
+                        placeholder="Enter Condition"
+                        size="small"
+                        variant="outlined"
                         value={readNumericValue(value)}
                         onChange={handleTextFieldChange}
                         onKeyPress={(event) => {
@@ -97,15 +100,6 @@ const Value = React.memo(
                             const value = (selected || []).map((item) => item.value);
                             dispatch({ type: "set-value", id, value });
                         }}
-                    />
-                );
-            case "number":
-                return (
-                    <TextField
-                        data-testid={testId}
-                        type="number"
-                        value={readNumericValue(value)}
-                        onChange={handleTextFieldChange}
                     />
                 );
             case "radio":
@@ -177,7 +171,15 @@ const Value = React.memo(
                 );
             default:
                 return (
-                    <TextField fullWidth data-testid={testId} value={value || ""} onChange={handleTextFieldChange} />
+                    <TextField
+                        fullWidth
+                        placeholder="Enter Condition"
+                        size="small"
+                        variant="outlined"
+                        data-testid={testId}
+                        value={value || ""}
+                        onChange={handleTextFieldChange}
+                    />
                 );
         }
     },
