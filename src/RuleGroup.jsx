@@ -75,7 +75,7 @@ const Rule = (props) => {
                 <Operator field={field} id={id} operator={operator} testId={testId} />
             </Grid>
             <Grid item className={classes.valueGridItem}>
-                <Value field={field} id={id} operator={operator} testId={testId} value={value} />
+                <Value field={field} id={id} operator={operator} testId={testId} value={value} type={type} />
             </Grid>
         </Grid>
     );
@@ -118,7 +118,8 @@ const RuleGroup = (props) => {
 
     const { dispatch } = context;
 
-    return <Grid container className={classes.group} data-testid={testId} direction="column" spacing={1}>
+    return (
+        <Grid container className={classes.group} data-testid={testId} direction="column" spacing={1}>
             <Grid item>
                 <Grid container spacing={2}>
                     <Grid item>
@@ -170,20 +171,20 @@ const RuleGroup = (props) => {
                             Rule
                         </Button>
                     </Grid>
-                    
-                        <Grid item>
-                            <Button
-                                className={classes.actionButton}
-                                color="primary"
-                                data-testid={`${testId}-add-group`}
-                                onClick={() => {
-                                    dispatch({ type: "add-group", id });
-                                }}
-                            >
-                                <AddIcon />
-                                Group
-                            </Button>
-                        </Grid>
+
+                    <Grid item>
+                        <Button
+                            className={classes.actionButton}
+                            color="primary"
+                            data-testid={`${testId}-add-group`}
+                            onClick={() => {
+                                dispatch({ type: "add-group", id });
+                            }}
+                        >
+                            <AddIcon />
+                            Group
+                        </Button>
+                    </Grid>
                 </Grid>
             </Grid>
             {rules?.length > 0 && (
@@ -202,6 +203,7 @@ const RuleGroup = (props) => {
                 </Grid>
             )}
         </Grid>
+    );
 };
 
 RuleGroup.defaultProps = {

@@ -379,6 +379,7 @@ function reducer(state, action) {
             const node = findNodeById(action.id, query);
             // node.field = action.value;
             node.operator = action.operator;
+            node.type = action.fieldType.value;
             node.value = null;
             console.log(node);
             return query;

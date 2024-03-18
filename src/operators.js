@@ -40,26 +40,6 @@ export const operators = [
         types: ["number", "integer"],
     },
     {
-        label: "before than",
-        value: "before",
-        types: ["date"],
-    },
-    {
-        label: "after than",
-        value: "after",
-        types: ["date"],
-    },
-    {
-        label: "before or equal to",
-        value: "before_equal",
-        types: ["date"],
-    },
-    {
-        label: "after or equal to",
-        value: "after_equal",
-        types: ["date"],
-    },
-    {
         label: "in",
         value: "in",
         types: ["multiselect"],

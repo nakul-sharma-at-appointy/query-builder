@@ -53,7 +53,7 @@ const Type = React.memo(
                     const operators = operatorsByType[value];
                     const operator = operators?.length > 0 ? operators[0].value : null;
                     console.log("OPERATORR HAII", operator);
-                    dispatch({ type: "set-type", id, operator });
+                    dispatch({ type: "set-type", id, operator, fieldType: type });
                 }}
             />
             // <TextField

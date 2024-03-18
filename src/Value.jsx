@@ -30,7 +30,8 @@ const Value = React.memo(
         };
         const context = React.useContext(Context);
 
-        const { field, id, operator, value } = props;
+        // eslint-disable-next-line react/prop-types
+        const { field, id, operator, value, type } = props;
         const { customOperators, dispatch, filtersByValue } = context;
 
         if (/null/i.test(operator)) {
@@ -46,7 +47,9 @@ const Value = React.memo(
         const handleTextFieldChange = (event) => {
             dispatch({ type: "set-value", id, value: event.target.value });
         };
-        switch (filter.type) {
+
+        console.log("VALUEE TYPE: ", type);
+        switch (type) {
             case "date":
                 return (
                     <DatePicker
