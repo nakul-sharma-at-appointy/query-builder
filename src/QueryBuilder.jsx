@@ -49,7 +49,6 @@ export function generateFlattenedFilters(filters) {
             });
         });
     });
-    console.log("Flat filters", list);
     return list;
 }
 
@@ -381,7 +380,6 @@ function reducer(state, action) {
             node.operator = action.operator;
             node.type = action.fieldType.value;
             node.value = null;
-            console.log(node);
             return query;
         }
         case "set-operator": {

@@ -48,7 +48,6 @@ const Value = React.memo(
             dispatch({ type: "set-value", id, value: event.target.value });
         };
 
-        console.log("VALUEE TYPE: ", type);
         switch (type) {
             case "date":
                 return (
