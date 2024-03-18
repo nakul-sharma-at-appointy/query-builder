@@ -158,31 +158,41 @@ storiesOf("MuiQueryBuilder")
             <MuiQueryBuilder
                 debug
                 filters={[
-                    {
-                        options: [
-                            {
-                                label: "Link",
-                                value: "link",
-                                type: "text",
-                            },
-                        ],
-                    },
+                   
                 ]}
-                maxLevels={0}
+                maxLevels={3}
                 query={{
                     combinator: "or",
                     rules: [
                         {
-                            field: "link",
-                            operator: "contains",
-                            value: "Brazil",
+                            field: "name",
+                            type: "text",
+                            operator: "null",
+                            value: null
                         },
                         {
-                            field: "link",
-                            operator: "contains",
-                            value: "Spain",
-                        },
-                    ],
+                            combinator: "and",
+                            rules: [
+                                {
+                                    field: "shashanj",
+                                    type: "text",
+                                    operator: "not_null",
+                                    value: null
+                                },
+                                {
+                                    combinator: "and",
+                                    rules: [
+                                        {
+                                            field: "Apple",
+                                            type: "text",
+                                            operator: "equal",
+                                            value: "46"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
                 }}
             />
         );

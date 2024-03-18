@@ -1,13 +1,13 @@
-const operators = [
+export const operators = [
     {
         label: "equal to",
         value: "equal",
-        types: ["date", "integer", "number", "radio", "select", "switch", "text"],
+        types: ["integer", "text"],
     },
     {
         label: "not equal to",
         value: "not_equal",
-        types: ["date", "integer", "number", "radio", "select", "switch", "text"],
+        types: ["integer", "text"],
     },
     {
         label: "contains",

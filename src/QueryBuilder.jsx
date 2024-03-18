@@ -20,9 +20,14 @@ export function generateFiltersByValue(filters) {
         options.forEach((option) => {
             const { value } = option;
             if (Object.prototype.hasOwnProperty.call(map, value)) {
-                throw new Error(`Duplicated filter: ${value}`);
+                // Already exists, you can choose to handle this case differently
+                // Instead of throwing an error, you can choose to update the existing entry
+                // or ignore it depending on your requirement
+                console.warn(`Duplicated filter: ${value}`);
+            } else {
+                // If the value is not already present, add it to the map
+                map[value] = { ...option };
             }
-            map[value] = { ...option };
         });
     });
     return map;
@@ -44,6 +49,7 @@ export function generateFlattenedFilters(filters) {
             });
         });
     });
+    console.log("Flat filters", list);
     return list;
 }
 
@@ -365,8 +371,16 @@ function reducer(state, action) {
         case "set-field": {
             const node = findNodeById(action.id, query);
             node.field = action.value;
+            // node.operator = action.operator;
+            node.value = null;
+            return query;
+        }
+        case "set-type": {
+            const node = findNodeById(action.id, query);
+            // node.field = action.value;
             node.operator = action.operator;
             node.value = null;
+            console.log(node);
             return query;
         }
         case "set-operator": {

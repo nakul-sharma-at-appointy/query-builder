@@ -9,6 +9,7 @@ import { Draggable, Container as DraggableContainer } from "react-smooth-dnd";
 import Context from "./context";
 import Field from "./Field";
 import Operator from "./Operator";
+import Type from "./Type";
 import Value from "./Value";
 
 const removeIconStyles = (t) => ({
@@ -42,7 +43,7 @@ const Rule = (props) => {
     const context = React.useContext(Context);
 
     const { id, level, position, rule } = props;
-    const { combinator, field, operator, rules, value } = rule;
+    const { combinator, field, type, operator, rules, value } = rule;
 
     const { dispatch } = context;
 
@@ -66,6 +67,9 @@ const Rule = (props) => {
             </Grid>
             <Grid item>
                 <Field field={field} id={id} testId={testId} />
+            </Grid>
+            <Grid item>
+                <Type field={field} type={type} id={id} testId={testId} />
             </Grid>
             <Grid item>
                 <Operator field={field} id={id} operator={operator} testId={testId} />
