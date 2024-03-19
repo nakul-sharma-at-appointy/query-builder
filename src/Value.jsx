@@ -61,7 +61,7 @@ const Value = React.memo(
                         }}
                     />
                 );
-            case "number":
+            case "Number":
                 return (
                     <TextField
                         data-testid={testId}
